@@ -13,6 +13,7 @@ import datetime
 
 # help('FORMATTING')
 user_1 = {
+    'pin' : 0000,
     'first': 'Matulu',
     'last': 'Shakur',
     'dob': '00/00/00',
