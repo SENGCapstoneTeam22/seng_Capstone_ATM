@@ -1,18 +1,132 @@
-<<<<<<< Updated upstream
-# This is a sample Python script.
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-# print(f'{"Player Name":16s} {"Goals":8s}')
-# print('-' * 24)
-#
-# print(f'{"Maria":16s} {"22":8s}')
-# print(f'{"Edward":16s} {"21":8s}')
 import datetime
 
+
 # help('FORMATTING')
+
+# Accounts Dictionary
+accounts = {
+    'Mutulu Shakur': {
+        'pin': 1111,
+        'first': 'Matulu',
+        'last': 'Shakur',
+        'dob': '00/00/00',
+        'debit': 3218,
+        'saving': 247,
+        'credit': 900,
+        'credit_used': 113,
+        'address': '1884 ECU Blvd.',
+        'state': '1884 ECU Blvd.',
+        'debit_transactions': {
+            'date': '00/00/00',
+            'debit_credit': 'debit',
+            'expense': 'random expense',
+            'amount_debited_credited': '-45.00',
+            'amount_remaining': '1155.00'
+        },
+        'savings_transactions': {
+            'date': '00/00/00',
+            'debit_credit': 'debit',
+            'expense': 'random expense',
+            'amount_debited_credited': '-45.00',
+            'amount_remaining': '1155.00'
+        },
+        'credit_transactions': {
+            'date': '00/00/00',
+            'debit_credit': 'debit',
+            'expense': 'random expense',
+            'amount_debited_credited': '-45.00',
+            'amount_remaining': '1155.00'
+        }
+    },
+    'Jacques Kallis': {
+        'pin': 2222,
+        'first': 'Jacques',
+        'last': 'Kallis',
+        'dob': '00/00/00',
+        'debit': 3218,
+        'saving': 247,
+        'credit': 900,
+        'credit_used': 113,
+        'address': '1884 ECU Blvd.',
+        'state': '1884 ECU Blvd.',
+        'debit_transactions': {
+            'date': '00/00/00',
+            'debit_credit': 'debit',
+            'expense': 'random expense',
+            'amount_debited_credited': '-50.00',
+            'amount_remaining': '1150.00'
+        },
+        'savings_transactions': {
+            'date': '00/00/00',
+            'debit_credit': 'debit',
+            'expense': 'random expense',
+            'amount_debited_credited': '-20.00',
+            'amount_remaining': '1180.00'
+        },
+        'credit_transactions': {
+            'date': '00/00/00',
+            'debit_credit': 'debit',
+            'expense': 'random expense',
+            'amount_debited_credited': '-145.00',
+            'amount_remaining': '1055.00'
+        }
+    },
+    'Ricky Bobby': {
+        'pin': 3333,
+        'first': 'Ricky',
+        'last': 'Bobby',
+        'dob': '00/00/00',
+        'debit': 3218,
+        'saving': 247,
+        'credit': 900,
+        'credit_used': 113,
+        'address': '1884 ECU Blvd.',
+        'state': 'NC',
+        'debit_transactions': {
+            'date': '00/00/00',
+            'debit_credit': 'debit',
+            'expense': 'random expense',
+            'amount_debited_credited': '-45.00',
+            'amount_remaining': '1155.00'
+        },
+        'savings_transactions': {
+            'date': '00/00/00',
+            'debit_credit': 'debit',
+            'expense': 'random expense',
+            'amount_debited_credited': '-45.00',
+            'amount_remaining': '1155.00'
+        },
+        'credit_transactions': {
+            'date': '00/00/00',
+            'debit_credit': 'debit',
+            'expense': 'random expense',
+            'amount_debited_credited': '-45.00',
+            'amount_remaining': '1155.00'
+        }
+    },
+}
+
+# transaction = ['date', 'debit or credit', 'random expense', 'amount debited/credited', 'remaining amount']
+
+
+# # Creation of User (to be used later w/ create-user view)
+# accounts['User_1'] = {
+#     'pin': 0000,
+#     'first': 'Matulu',
+#     'last': 'Shakur',
+#     'dob': '00/00/00',
+#     'debit': 3218,
+#     'saving': 247,
+#     'credit': 900,
+#     'credit_used': 113,
+#     'address': '1884 ECU Blvd.',
+#     'state': '1884 ECU Blvd.',
+#     'debit_transactions': [],
+#     'savings_transactions': [],
+#     'credit_transactions': []
+# }
+
 user_1 = {
     'pin': 0000,
     'first': 'Matulu',
@@ -36,9 +150,9 @@ print(f"\n\n{user_1['last']:8s}{user_1['first']:14s} {date:8s}")
 # Display Divider
 print('-' * 35)
 
-print(f'{"0 : Checking":20} {"1 : Deposit":16s}')
-print(f'{"2 : Saving":20s} {"3 : Credit":16s}')
-print(f'{"4 : Profile":20s} {"5 : Exit":16s}\n')
+print(f'{"0 : Accounts":20} {"1 : Deposit":16s}')
+print(f'{"2 : Transfer":20s} {"3 : Settings":16s}')
+print(f'{"4 : Products":20s} {"5 : Exit":16s}\n')
 
 user_input = input('Enter your selection:\n').strip().lower()
 print('\n\n\n\n\n')
@@ -240,4 +354,3 @@ def start_atm():
 
 
 start_atm()
->>>>>>> Stashed changes
