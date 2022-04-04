@@ -11,19 +11,18 @@ def run_user_program(user):
     After the PIN is verified, this program will run.
     The User Object/Dictionary is passed into this function to be used for CRUD.
     """
-    print(user['pin'])
-    print(user)
-    print(user['pin'])
     date = str(datetime.date.today())
     # Display user-name & date
     print(f"\n\n{user['last']:8s}{user['first']:14s} {date:8s}")
     # Display Divider
     print('-' * 35)
 
+    # User Commands
     print(f'{"0 : Accounts":20} {"1 : Deposit":16s}')
     print(f'{"2 : Transfer":20s} {"3 : Settings":16s}')
     print(f'{"4 : Products":20s} {"5 : Exit":16s}\n')
 
+    # Ask User for a Command
     user_input = input('Enter your selection:\n').strip().lower()
     print('\n\n\n\n\n')
 
@@ -34,12 +33,15 @@ def run_user_program(user):
             # Display Divider
             print('-' * 35)
 
+            # User Commands
             print(f'{"Current Balance":<15} : {user["debit"]:>10}\n')
             print(f'{"1 : View Transactions":25s} {"3 : Credit":16s}')
             print(f'{"4 : Profile":25s} {"5 : Exit":16s}\n')
+
+            # Ask User for Next Command
             user_input = input('Enter your selection:\n')
 
-            # If the user chooses the 'EXIT' command, restart/re-run the program.
+            # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
                 run_user_program(accounts)
@@ -50,12 +52,15 @@ def run_user_program(user):
             # Display Divider
             print('-' * 35)
 
+            # User Commands
             print(f'{"0 : Checking":20} {"1 : Deposit":16s}')
             print(f'{"2 : Saving":20s} {"3 : Credit":16s}')
             print(f'{"4 : Profile":20s} {"5 : Exit":16s}\n')
+
+            # Ask User for Next Command
             user_input = input('Enter your selection:\n')
 
-            # If the user chooses the 'EXIT' command, restart/re-run the program.
+            # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
                 run_user_program(accounts)
@@ -66,12 +71,15 @@ def run_user_program(user):
             # Display Divider
             print('-' * 35)
 
+            # User Commands
             print(f'{"0 : Checking":20} {"1 : Deposit":16s}')
             print(f'{"2 : Saving":20s} {"3 : Credit":16s}')
             print(f'{"4 : Profile":20s} {"5 : Exit":16s}\n')
+
+            # Ask User for Next Command
             user_input = input('Enter your selection:\n')
 
-            # If the user chooses the 'EXIT' command, restart/re-run the program.
+            # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
                 run_user_program(accounts)
@@ -82,12 +90,15 @@ def run_user_program(user):
             # Display Divider
             print('-' * 35)
 
+            # User Commands
             print(f'{"0 : Checking":20} {"1 : Deposit":16s}')
             print(f'{"2 : Saving":20s} {"3 : Credit":16s}')
             print(f'{"4 : Profile":20s} {"5 : Exit":16s}\n')
+
+            # Ask User for Next Command
             user_input = input('Enter your selection:\n')
 
-            # If the user chooses the 'EXIT' command, restart/re-run the program.
+            # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
                 run_user_program(accounts)
@@ -102,15 +113,16 @@ def run_user_program(user):
 
             # Return Command
             print(f'{"0 : Return to Main Menu":20}\n')
-            # Ask Admin for Next Command
+
+            # Ask User for Next Command
             user_input = input('Enter your selection:\n')
 
-            # If the user chooses the 'EXIT' command, restart/re-run the program.
+            # If the User  chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '0' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
                 print('\n\n\n\n\n')
                 # start_atm()
-                run_admin_program(accounts)
+                run_user_program(accounts)
     print('Thank you for using XYZ Bank. Have a great day!')
 
 
@@ -131,6 +143,9 @@ def start_atm():
             # print(account)
             # Run user program/function
             run_user_program(account)
+        elif int(entered_pin) == 0000:
+            # Run admin program/function
+            run_admin_program(account)
 
             # TODO: COME UP W/ A WAY TO CLOSE PROGRAM ON COMMAND (EXIT FUNCTION)
 
