@@ -145,7 +145,7 @@ def start_atm():
             run_user_program(account)
         elif int(entered_pin) == 0000:
             # Run admin program/function
-            run_admin_program(account)
+            run_admin_program(accounts)
 
             # TODO: COME UP W/ A WAY TO CLOSE PROGRAM ON COMMAND (EXIT FUNCTION)
 
