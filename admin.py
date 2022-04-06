@@ -42,9 +42,20 @@ def run_admin_program(accounts):
             print(f'{"0 : View Users":20s} {"1 : Add User":16s}')
             print(f'{"2 : Updated Users":20s} {"3 : Search Users":16s}')
             print(f'{"4 : Delete User":20s} {"5 : Exit":16s}\n')
+            # Display User Accounts
+
+
+
+
+
 
             # Ask Admin for Next Command
             user_input = input('Enter your selection:\n')
+            # Display users and total number of users
+            # help('Need to figure out how to take information from the accounts dictionary to display here')
+            if user_input == '0' or user_input == "view users":
+                print(' Mutulu Shakur\n','Jacques Kallis\n','Ricky Bobby\n','Total accounts = 3\n')
+
             # If the user chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
