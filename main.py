@@ -128,10 +128,14 @@ def run_user_program(user):
 
 def start_atm():
     # WELCOME MESSAGE (START OF PROGRAM)
-    print(f'{"Welcome to College Bank":^50s}\n\n')
+    print("****************************************************************************")
+    print("*                                                                          *")
+    print("*                   Welcome to College Bank ATM                            *")
+    print("*                                                                          *")
+    print("****************************************************************************")
 
     # Request User-Account PIN
-    entered_pin = (input('Enter Your PIN: ')).strip()
+    entered_pin = (input('Please Enter Your PIN Below to Get Started: \n')).strip()
 
     # Check entered PIN against all Account-PIN's by looping
     for account in accounts.values():
