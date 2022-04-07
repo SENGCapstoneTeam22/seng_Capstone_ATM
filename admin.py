@@ -54,6 +54,11 @@ def run_admin_program(accounts):
             # Display users and total number of users
             # help('Need to figure out how to take information from the accounts dictionary to display here')
             if user_input == '0' or user_input == "view users":
+                # Display user-name & date
+                print(f"{' Users':20s} {date:>25}")
+
+                # Display Divider
+                print('-' * 50)
                 print(' Mutulu Shakur\n','Jacques Kallis\n','Ricky Bobby\n','Total accounts = 3\n')
 
             # If the user chooses the 'EXIT' command, restart/re-run the program.
