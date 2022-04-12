@@ -123,14 +123,18 @@ def run_user_program(user):
                 print('\n\n\n\n\n')
                 # start_atm()
                 run_user_program(accounts)
-    print('Thank you for using XYZ Bank. Have a great day!')
+    print("****************************************************************************")
+    print("*                                                                          *")
+    print("*                   Thank you for using College Bank ATM!                  *")
+    print("*                                                                          *")
+    print("****************************************************************************")
 
 
 def start_atm():
     # WELCOME MESSAGE (START OF PROGRAM)
     print("****************************************************************************")
     print("*                                                                          *")
-    print("*                   Welcome to College Bank ATM                            *")
+    print("*                   Welcome to College Bank ATM!                           *")
     print("*                                                                          *")
     print("****************************************************************************")
 
