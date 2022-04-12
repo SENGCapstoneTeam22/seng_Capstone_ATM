@@ -59,7 +59,11 @@ def run_admin_program(accounts):
 
                 # Display Divider
                 print('-' * 50)
-                print(' Mutulu Shakur\n','Jacques Kallis\n','Ricky Bobby\n','Total accounts = 3\n')
+                # Display the names of the users in the accounts dictionary
+                for user in accounts:
+                    print(user)
+
+
 
             # If the user chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
