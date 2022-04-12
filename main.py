@@ -154,6 +154,40 @@ def start_atm():
         elif int(entered_pin) == 0000:
             # Run admin program/function
             run_admin_program(accounts)
+        elif int(entered_pin) != 0000 or int(entered_pin) != int(pin_ref):
+            print("****************************************************************************")
+            print("*                                                                          *")
+            print("*                   Sorry invalid PIN :(                                   *")
+            print("*               Do you want to try again? y/n                              *")
+            print("*                                                                          *")
+            print("****************************************************************************")
+            person_answer = input('y/n    ')
+            if person_answer =='y':
+                print("****************************************************************************")
+                print("*                                                                          *")
+                print("*                   Welcome to College Bank ATM!                           *")
+                print("*                                                                          *")
+                print("****************************************************************************")
+                entered_pin = (input('Please Enter Your PIN Below to Get Started: \n')).strip()
+                for account in accounts.values():
+                    # print(account['pin'])
+                    pin_ref = account['pin']
+
+                    # If PIN's match, run User_Program(). Passing the individual account data of matching PIN.
+                    if int(pin_ref) == int(entered_pin):
+                        # print(account)
+                        # Run user program/function
+                        run_user_program(account)
+                    elif int(entered_pin) == 0000:
+                        # Run admin program/function
+                        run_admin_program(accounts)
+            else:
+                print("****************************************************************************")
+                print("*                                                                          *")
+                print("*                   Thank you for using College Bank ATM!                  *")
+                print("*                                                                          *")
+                print("****************************************************************************")
+                break
 
             # TODO: COME UP W/ A WAY TO CLOSE PROGRAM ON COMMAND (EXIT FUNCTION)
 
