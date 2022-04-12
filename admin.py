@@ -64,6 +64,37 @@ def run_admin_program(accounts):
                     print(user)
 
 
+            # Added the beginning of the "add user" function
+            # FIXME Inputting 1 triggers the transaction menu as well as this print statement
+            if user_input == '1' or user_input == "Add User":
+                print(f"{' Please enter user info':20s} {date:>25}")
+                print('-' * 50)
+
+            # Added the beginning of the "updated user" function
+            # FIXME Same as before, inputting 2 triggers the system information menu as well as the print statement
+            if user_input == '2' or user_input == "Updated Users":
+                print(f"{' Please select User':20s} {date:>25}")
+                print('-' * 50)
+
+            # Added the beginning of the "search user" function
+            # FIXME Same as before, inputting 3 triggers the admin menu from lines 158 thru 168 as well as the print statement
+            if user_input == '3' or user_input == "Search Users":
+                print(f"{' Please enter Users name':20s} {date:>25}")
+                print('-' * 50)
+
+            # Added the beginning of the "delete user" function
+            if user_input == '4' or user_input == "Delete User":
+                print(f"{' Please enter Users name and the Admin code':20s} {date:>25}")
+                print('-' * 50)
+
+
+
+
+
+
+
+
+
 
             # If the user chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
@@ -87,7 +118,7 @@ def run_admin_program(accounts):
             user_input = input('Enter your selection:\n')
 
             # If the user chooses the 'EXIT' command, restart/re-run the program.
-            if user_input == '6' or user_input == 'exit':
+        if user_input == '6' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
                 run_admin_program(accounts)
 
