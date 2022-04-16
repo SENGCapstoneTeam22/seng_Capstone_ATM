@@ -2,6 +2,7 @@ import datetime
 from admin import run_admin_program
 from account_holders import accounts
 
+
 # help('FORMATTING')
 
 
@@ -19,36 +20,71 @@ def run_user_program(user):
 
     # User Commands
     print(f'{"0 : Accounts":20} {"1 : Deposit":16s}')
-    print(f'{"2 : Transfer":20s} {"3 : Settings":16s}')
-    print(f'{"4 : Products":20s} {"5 : Exit":16s}\n')
+    print(f'{"2 : Transfer":20s} {"4 : Products":16s}')
+    print(f'{"5 : Exit":20s}\n')
 
     # Ask User for a Command
     user_input = input('Enter your selection:\n').strip().lower()
     print('\n\n\n\n\n')
 
     if user_input != 'exit':
-        if user_input == '0' or user_input == 'accounts':
+
+        if user_input == '0' or user_input.lower() == 'accounts':
             # Display user-name & date
-            print(f'{user["last"]:8s} {user["first"]:14s} {date:8s}')
+            print(f'{user["last"]:8s}, {user["first"]:14s} {date:8s}')
             # Display Divider
             print('-' * 35)
 
             # User Commands
             print(f'{"Current Balance":<15} : {user["debit"]:>10}\n')
-            print(f'{"1 : View Transactions":25s} {"3 : Credit":16s}')
-            print(f'{"4 : Profile":25s} {"5 : Exit":16s}\n')
+            # print(f'{"1 : View Transactions":25s} {"3 : Credit":16s}') # REMOVE
+            print(f'{"1 : Checking":25s} {"2 : Saving":16s}')
+            print(f'{"3 : Profile":25s} {"4 : Exit":16s}\n')
 
             # Ask User for Next Command
             user_input = input('Enter your selection:\n')
+            # If the User chooses the 'EXIT' command, restart/re-run the program.
+            if user_input == '1' or user_input.lower() == 'checking':
+
+                # Print USER DEBIT TRANSACTIONS
+                print(f"{user['first']:^10}{user['last']:<50}")
+                print(f"{'Checking':^80}\n")
+                print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
+                print('-' * 80)
+                for transaction_ in user['debit_transactions']:
+                    # print(transaction_)
+                    print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
+                          f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
+                print()
+
 
             # If the User chooses the 'EXIT' command, restart/re-run the program.
-            if user_input == '5' or user_input == 'exit':
+            if user_input == '2' or user_input == 'saving':
+
+                # Print USER SAVING TRANSACTIONS
+                print(f"{user['first']:^10}{user['last']:<50}")
+                print(f"{'Savings':^80}\n")
+                print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
+                print('-' * 80)
+                for transaction_ in user['savings_transactions']:
+                    # print(transaction_)
+                    print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
+                          f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
+                print()
+
+                # If the User chooses the 'EXIT' command, restart/re-run the program.
+            if user_input == '3' or user_input == 'profile':
+                # Restart/re-run the program to get back to Main Menu
+                run_user_program(accounts)
+
+            # If the User chooses the 'EXIT' command, restart/re-run the program.
+            if user_input == '4' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
                 run_user_program(accounts)
 
         if user_input == '1' or user_input == 'deposit':
             # Display user-name & date
-            print(f"{user['last']:8s}{user['first']:14s} {date:8s}")
+            print(f"{user['last']:8s}, {user['first']:14s} {date:8s}")
             # Display Divider
             print('-' * 35)
 
@@ -67,7 +103,7 @@ def run_user_program(user):
 
         if user_input == '2' or user_input == 'transfer':
             # Display user-name & date
-            print(f"{user['last']:8s}{user['first']:14s} {date:8s}")
+            print(f"{user['last']:8s}, {user['first']:14s} {date:8s}")
             # Display Divider
             print('-' * 35)
 
@@ -86,7 +122,7 @@ def run_user_program(user):
 
         if user_input == '3' or user_input == 'settings':
             # Display user-name & date
-            print(f"{user['last']:8s}{user['first']:14s} {date:8s}")
+            print(f"{user['last']:8s}, {user['first']:14s} {date:8s}")
             # Display Divider
             print('-' * 35)
 
@@ -107,9 +143,17 @@ def run_user_program(user):
             # Display Divider
             print('-' * 35)
 
-            print(f'{"Savings Interest :"}')
-            print(f'{"CD Interest :"}')
-            print(f'{"Business Loan Rates :"}\n')
+            print(f'{"Checking Interest :":<20} {"0.25% APY":>20}')
+            print(f'{"Savings Interest :":<20} {"0.050% APY":>20}')
+            print(f'{"Business Loan :":<20} {"3.89% APR":>20}')
+
+            print(f'{"Mortgage :":<20} {"3.500% APR":>20}')
+            print(f'{"Credit Card :":<20} {"9.99% APR":>20}')
+            print(f'{"Personal Loan :":<20} {"3.16% APR":>20}')
+            print(f'{"CD Interest :":<20} {"2.96% APR":>20}')
+
+            print(f'{"Auto Loan :":<20} {"4.093% APR":>20}')
+            print(f'{"Private Student Loan :":<20} {"3.16% APR":>18}\n')
 
             # Return Command
             print(f'{"0 : Return to Main Menu":20}\n')

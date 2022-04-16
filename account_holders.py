@@ -133,7 +133,7 @@ accounts = {
 # }
 
 
-# Admin Functions
+# Admin Functions/Loops
 """
 A For-Loop that prints members name and all debit transactions.
 Combine For-Loops to print multiple values, debit + saving = all transactions.
