@@ -69,6 +69,24 @@ def run_admin_program(accounts):
             if user_input == '1' or user_input == "Add User":
                 print(f"{' Please enter user info':20s} {date:>25}")
                 print('-' * 50)
+                for user in accounts:
+                    first = str(input())
+                    last = str(input())
+                    dob = str(input())
+
+                    accounts.update(first)
+
+
+
+
+
+
+
+
+
+
+
+
 
             # Added the beginning of the "updated user" function
             # FIXME Same as before, inputting 2 triggers the system information menu as well as the print statement
@@ -77,10 +95,17 @@ def run_admin_program(accounts):
                 print('-' * 50)
 
             # Added the beginning of the "search user" function
-            # FIXME Same as before, inputting 3 triggers the admin menu from lines 158 thru 168 as well as the print statement
+            # FIXME Outputs the error message regardless of correct input. It also prints it multiple times
             if user_input == '3' or user_input == "Search Users":
                 print(f"{' Please enter Users name':20s} {date:>25}")
                 print('-' * 50)
+                user_input = input()
+                for user in accounts:
+                    if user_input == user:
+                        print(user)
+                    elif user_input != user:
+                        print('No accounts assosciated with that name. Please enter User name')
+
 
             # Added the beginning of the "delete user" function
             if user_input == '4' or user_input == "Delete User":
