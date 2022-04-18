@@ -59,38 +59,58 @@ def run_admin_program(accounts):
 
                 # Display Divider
                 print('-' * 50)
-                # Display the names of the users in the accounts dictionary
+                # Display the names of the users and their info  in the accounts dictionary
                 for user in accounts:
                     print(user)
+                    print(accounts[user])
 
 
             # Added the beginning of the "add user" function
-            # FIXME Inputting 1 triggers the transaction menu as well as this print statement
+            # FIXME Error message reads "dictionary changed size during iteration"
             if user_input == '1' or user_input == "Add User":
                 print(f"{' Please enter user info':20s} {date:>25}")
                 print('-' * 50)
                 for user in accounts:
+                    name = str(input())
+                    accounts[name] = {}
+                    pin = int(input())
+                    accounts[name]['pin'] = pin
                     first = str(input())
+                    accounts[name]['first'] = first
                     last = str(input())
+                    accounts[name]['last'] = last
                     dob = str(input())
+                    accounts[name]['dob'] = dob
+                    debit = int(input())
+                    accounts[name]['debit'] = debit
+                    saving = int(input())
+                    accounts[name]['saving'] = saving
+                    credit = int(input())
+                    accounts[name]['credit'] = credit
+                    credit_used = int(input())
+                    accounts[name]['credit_used'] = credit_used
+                    address = str(input())
+                    accounts[name]['address'] = address
+                    state = str(input())
+                    accounts[name]['state'] = state
+                    debit_transaction = []
+                    savings_transactions = []
 
-                    accounts.update(first)
 
-            # Added the beginning of the "updated user" function
+                    # Added the beginning of the "updated user" function
             # FIXME Same as before, inputting 2 triggers the system information menu as well as the print statement
             if user_input == '2' or user_input == "Updated Users":
                 print(f"{' Please select User':20s} {date:>25}")
                 print('-' * 50)
 
-            # Added the beginning of the "search user" function
-            # FIXME The command appears to be checking all of the users in the dictionary and prints the error message for the names that don't match. If the input is Mutulu Shakur, the first line is the name, while the remaining two are the error message.
+            # search user will now print the user specified and all the info from the dictionary
+
             if user_input == '3' or user_input == "Search Users":
                 user_input = input('Please enter Account name:\n')
                 for user in accounts:
                     if user_input == user:
                         print(user)
-                    else:
-                        print('No accounts associated with that name.')
+                        print(accounts[user])
             # Added the beginning of the "delete user" function
             if user_input == '4' or user_input == "Delete User":
                 print(f"{' Please enter Users name and the Admin code':20s} {date:>25}")
