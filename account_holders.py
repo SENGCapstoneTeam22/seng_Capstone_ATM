@@ -4,7 +4,7 @@ import datetime
 accounts = {
     'Mutulu Shakur': {
         'pin': 1111,
-        'first': 'Matulu',
+        'first': 'Mutulu',
         'last': 'Shakur',
         'dob': '00/00/00',
         'debit': 7430,
@@ -30,7 +30,7 @@ accounts = {
             {'date': '04/10/2022', 'deb_cred': 'credit', 'expense': 'DIRECT DEPOSIT - JOB', 'amt': 400,
              'remaining': 4633.19},
             {'date': '03/21/2022', 'deb_cred': 'credit', 'expense': 'DIRECT DEPOSIT - JOB', 'amt': 400,
-             'remaining': 4233.00},
+             'remaining': 4233.19},
             {'date': '03/07/2022', 'deb_cred': 'credit', 'expense': 'DIRECT DEPOSIT - JOB', 'amt': 400,
              'remaining': 3833.19},
             {'date': '02/21/2022', 'deb_cred': 'credit', 'expense': 'DIRECT DEPOSIT - JOB', 'amt': 400,
@@ -168,7 +168,7 @@ Combine For-Loops to print multiple values, debit + saving = all transactions.
 
 Un-comment code below before copy/paste, REMEMBER TO RE-APPLY COMMENT NOTATION BEFORE RUNNING PROGRAM
 """
-# # Print ALL USERS DEBIT TRANSACTIONS
+# # PRINT ALL USERS DEBIT TRANSACTIONS
 # date = str(datetime.date.today())
 # print(f'{date:>80}')
 # for account in accounts.values():
@@ -185,7 +185,7 @@ Un-comment code below before copy/paste, REMEMBER TO RE-APPLY COMMENT NOTATION B
 #     print()
 
 
-# # Print ALL USERS SAVING TRANSACTIONS
+# # PRINT ALL USERS SAVING TRANSACTIONS
 # date = str(datetime.date.today())
 # print(f'{date:>80}')
 # for account in accounts.values():
@@ -202,7 +202,7 @@ Un-comment code below before copy/paste, REMEMBER TO RE-APPLY COMMENT NOTATION B
 #     print()
 
 
-# # Print ALL USERS DEBIT & SAVING TRANSACTIONS (SEPERATED)
+# # PRINT ALL USERS DEBIT & SAVING TRANSACTIONS (SEPERATED)
 # date = str(datetime.date.today())
 # print(f'{date:>80}')
 # for account in accounts.values():
@@ -241,3 +241,39 @@ Un-comment code below before copy/paste, REMEMBER TO RE-APPLY COMMENT NOTATION B
 #         print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
 #               f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
 #     print()
+
+
+# # CODE BELOW GRABS INDIVIDUAL USER DATA, W/ OPTION TO SEARCH FOR ADMIN
+# for user in accounts:
+#     if 'mutulu' in user.lower():
+#         print(f'  {user}')
+#
+# for member in accounts.values():
+#     pin = member['pin']
+#     first = member['first']
+#     last = member['last']
+#     dob = member['dob']
+#     debit = member['debit']
+#     savings = member['saving']
+#     credit = member['credit']
+#     credit_used = member['credit_used']
+#     address = member['address']
+#     state = member['state']
+#     debit_transactions = member['debit_transactions']
+#     savings_transactions = member['savings_transactions']
+#
+#     # date = member['pin']
+#     # deb_cred = member['deb_cred'] # error
+#     # expense = member['expense']
+#     # amt = member['amt']
+#     # remaining = member['remaining']
+#
+#     # TODO: Grab last 'remaining' amt (debit/savings) and link to variables below
+#     # current_debit = None
+#     # current_savings = None
+#
+# if first.lower() == 'mutulu': # TODO: 'mutulu' should be replaced with input().strip() for searching the dictionary
+#  print(f'\nPin : {pin}\nFirst : {first}\nDOB : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
+#  f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n') print('   Debit Transactions:\n') for
+#  transaction in debit_transactions: print(transaction) print() print('   Savings Transactions:\n') for transaction
+#  in savings_transactions: print(transaction)
