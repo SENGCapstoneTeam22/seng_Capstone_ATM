@@ -76,18 +76,6 @@ def run_admin_program(accounts):
 
                     accounts.update(first)
 
-
-
-
-
-
-
-
-
-
-
-
-
             # Added the beginning of the "updated user" function
             # FIXME Same as before, inputting 2 triggers the system information menu as well as the print statement
             if user_input == '2' or user_input == "Updated Users":
@@ -95,18 +83,14 @@ def run_admin_program(accounts):
                 print('-' * 50)
 
             # Added the beginning of the "search user" function
-            # FIXME Outputs the error message regardless of correct input. It also prints it multiple times
+            # FIXME The command appears to be checking all of the users in the dictionary and prints the error message for the names that don't match. If the input is Mutulu Shakur, the first line is the name, while the remaining two are the error message.
             if user_input == '3' or user_input == "Search Users":
-                print(f"{' Please enter Users name':20s} {date:>25}")
-                print('-' * 50)
-                user_input = input()
+                user_input = input('Please enter Account name:\n')
                 for user in accounts:
                     if user_input == user:
                         print(user)
-                    elif user_input != user:
-                        print('No accounts assosciated with that name. Please enter User name')
-
-
+                    else:
+                        print('No accounts associated with that name.')
             # Added the beginning of the "delete user" function
             if user_input == '4' or user_input == "Delete User":
                 print(f"{' Please enter Users name and the Admin code':20s} {date:>25}")
