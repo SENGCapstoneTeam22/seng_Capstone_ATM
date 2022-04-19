@@ -166,9 +166,13 @@ Combine For-Loops to print multiple values, debit + saving = all transactions.
 04/10/2020      credit          random expense           1450.0        2237.69
 04/04/2020      debit           random expense          -234.83         787.69
 
-Un-comment code below before copy/paste, REMEMBER TO RE-APPLY COMMENT NOTATION BEFORE RUNNING PROGRAM
+******  UN-COMMENT INDIVIDUALLY CODE SNIPPETS BELOW FOR TESTING & BEFORE copy/paste  ******
+
+    - RUN THE PROGRAM AFTER UN-COMMENTING A SNIPPET BELOW TO VIEW IT'S ACTION...
+
+REMEMBER TO RE-APPLY COMMENT NOTATION BEFORE RUNNING PROGRAM FOR PRODUCTION.
 """
-# # PRINT ALL USERS DEBIT TRANSACTIONS
+# # PRINT ALL USERS DEBIT TRANSACTIONS (^^EXAMPLE ABOVE^^)
 # date = str(datetime.date.today())
 # print(f'{date:>80}')
 # for account in accounts.values():
@@ -202,40 +206,63 @@ Un-comment code below before copy/paste, REMEMBER TO RE-APPLY COMMENT NOTATION B
 #     print()
 
 
-# # PRINT ALL USERS DEBIT & SAVING TRANSACTIONS (SEPERATED)
-# date = str(datetime.date.today())
-# print(f'{date:>80}')
-# for account in accounts.values():
-#     print()
-#     # print({f"{account['first']:60} {account['last']:20"})
-#     print(f"{account['first']:^10}{account['last']:<50}")
-#     print()
-#     print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
-#     print('-' * 80)
-#     print(f"{'Debit':^10}")
-#     for transaction_ in account['debit_transactions']:
-#         # print(transaction_)
-#         print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
-#               f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
-#     print()
-#     print(f"{'Savings':^10}")
-#     for transaction_ in account['savings_transactions']:
-#         print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
-#               f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
+# PRINT ALL USERS DEBIT & SAVING TRANSACTIONS (SEPERATED)
+# Create variable that store the current date as a String
+date = str(datetime.date.today())
+# Print the current date at the top-far-right of the UI
+print(f'{date:>80}')
+
+# Iterate through accounts.values() to access inner dictionaries.
+for account in accounts.values():
+    print()
+    # Print Users first and last name
+    print(f"{account['first']:^10}{account['last']:<50}")
+    print()
+
+    # Print labels above transactions
+    print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
+    print('-' * 80)
+    for transaction_ in account['debit_transactions']:
+        # Print each debit transaction
+        print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
+              f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
+    print()
+
+    # Print 'Debit' label above transactions
+    print(f"{'Savings':^10}")
+    
+    for transaction_ in account['savings_transactions']:
+        print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
+              f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
+    print()
+
 
 # # Print ALL USERS DEBIT & SAVING TRANSACTIONS (COMBINED)
+# # Create variable that store the current date as a String
 # date = str(datetime.date.today())
+# # Print the current date at the top-far-right of the UI
 # print(f'{date:>80}')
+#
+# # Iterate through accounts.values() to access inner dictionaries.
 # for account in accounts.values():
-#     joint_transaction = account['debit_transactions'] + account['savings_transactions']
+#     # Create variable to hold both debit and savings transactions as two dictionaries in one list.
+#     joint_transaction = account['debit_transactions'] + account['savings_transactions']  # <-- Type: LIST
 #
 #     print()
+#
+#     # Print Users first and last
 #     print(f"{account['first']:^10}{account['last']:<50}")
 #     print()
+#
+#     # Print labels above transactions
 #     print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
+#     # Print border-line
 #     print('-' * 80)
 #
+#     # Print 'Debit' label above transactions
 #     print(f"{'Debit':^10}")
+#
+#     # Iterate through the joint_transaction list (debit/savings transactions)
 #     for transaction_ in joint_transaction:
 #         # print(transaction_)
 #         print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
@@ -244,11 +271,14 @@ Un-comment code below before copy/paste, REMEMBER TO RE-APPLY COMMENT NOTATION B
 
 
 # # CODE BELOW GRABS INDIVIDUAL USER DATA, W/ OPTION TO SEARCH FOR ADMIN
+# # Iterate through accounts, print User-name if in accounts
 # for user in accounts:
-#     if 'mutulu' in user.lower():
+#     if 'mutulu' in user.lower(): # TODO: 'mutulu' should be replaced with input().strip() for searching the dictionary
 #         print(f'  {user}')
 #
+# # Iterate through accounts.values() to access inner dictionaries.
 # for member in accounts.values():
+#     # Create variables to hold query references.
 #     pin = member['pin']
 #     first = member['first']
 #     last = member['last']
@@ -269,11 +299,31 @@ Un-comment code below before copy/paste, REMEMBER TO RE-APPLY COMMENT NOTATION B
 #     # remaining = member['remaining']
 #
 #     # TODO: Grab last 'remaining' amt (debit/savings) and link to variables below
-#     # current_debit = None
-#     # current_savings = None
+#     # For ***USER-TEAM***, use variables below to show current money in the bank.
+#     # Reading the from the last transaction, the remaining amount.
+#     current_debit = None
+#     current_savings = None
 #
-# if first.lower() == 'mutulu': # TODO: 'mutulu' should be replaced with input().strip() for searching the dictionary
-#  print(f'\nPin : {pin}\nFirst : {first}\nDOB : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
-#  f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n') print('   Debit Transactions:\n') for
-#  transaction in debit_transactions: print(transaction) print() print('   Savings Transactions:\n') for transaction
-#  in savings_transactions: print(transaction)
+#     # Check if the 'first-name' is equal to the users input
+#     if first.lower() == 'mutulu':  # TODO: 'mutulu' should be replaced with input().strip() for searching the dictionary
+#
+#         # Print the all the information in the user dictionary of the user, using String Formatting.
+#         print(f'\nPin : {pin}\nFirst : {first}\nDOB : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
+#               f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n')
+#
+#         # Print 'Debit Transactions:' before printing/displaying all debit-transactions
+#         print('   Debit Transactions:\n')
+#         # For every debit-transaction, print transaction
+#         # TODO: Use String Formatting as above, to display in a more neatly/professional looking manner.
+#         #  Reference variables are already listed above in comments.
+#         for transaction in debit_transactions:
+#             print(transaction)
+#         # Blank line for separation
+#         print()
+#
+#         # Print 'Savings Transactions:' before printing/displaying all savings-transactions
+#         print('   Savings Transactions:\n')
+#         for transaction in savings_transactions:
+#             print(transaction)
+#         # Blank line for separation
+#         print()
