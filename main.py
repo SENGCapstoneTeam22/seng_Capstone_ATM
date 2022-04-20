@@ -57,8 +57,6 @@ def run_user_program(user):
                           f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
                 print()
 
-
-            # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '2' or user_input == 'saving':
 
                 # Print USER SAVING TRANSACTIONS

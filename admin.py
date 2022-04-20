@@ -130,7 +130,7 @@ def run_admin_program(accounts):
                 # Restart/re-run the program to get back to Main Menu
                 run_admin_program(accounts)
 
-        if user_input == '1' or user_input == 'transactions':
+        if user_input == '1' or user_input.lower() == 'transactions':
             # Display user-name & date
             print(f"\n\n{' Admin':20s} {date:>25}")
 
@@ -145,11 +145,13 @@ def run_admin_program(accounts):
 
             # Ask Admin for Next Command
             user_input = input('Enter your selection:\n')
+            print()
+
 
             # If the user chooses the 'EXIT' command, restart/re-run the program.
-        if user_input == '6' or user_input == 'exit':
-                # Restart/re-run the program to get back to Main Menu
-                run_admin_program(accounts)
+            if user_input == '6' or user_input == 'exit':
+                    # Restart/re-run the program to get back to Main Menu
+                    run_admin_program(accounts)
 
         if user_input == '2' or user_input == 'system info':
             # Display user-name & date
