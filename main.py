@@ -204,8 +204,8 @@ def start_atm():
         elif int(entered_pin) == 0000:
             # Run admin program/function
             run_admin_program(accounts)
-        #invalid pin for user/try again
         elif int(entered_pin) != 0000 or int(entered_pin) != int(pin_ref):
+            #invalid pin for user/try again
             print("****************************************************************************")
             print("*                                                                          *")
             print("*                   Sorry invalid PIN :(                                   *")
@@ -232,8 +232,17 @@ def start_atm():
                     elif int(entered_pin) == 0000:
                         # Run admin program/function
                         run_admin_program(accounts)
-            #break loop
+            if person_answer == 'n':
+                #quit invalid answer attempts
+                print("****************************************************************************")
+                print("*                                                                          *")
+                print("*                   Thank you for using College Bank ATM!                  *")
+                print("*                                                                          *")
+                print("****************************************************************************")
+                break
             else:
+                #break loop for invalid answer
+                print("Invalid Answer... Forcing Exit...\n\n")
                 print("****************************************************************************")
                 print("*                                                                          *")
                 print("*                   Thank you for using College Bank ATM!                  *")
