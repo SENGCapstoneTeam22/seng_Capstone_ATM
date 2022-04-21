@@ -165,7 +165,13 @@ def run_user_program(user):
                 print('\n\n\n\n\n')
                 # start_atm()
                 run_user_program(accounts)
+        #quit for user
         if user_input == '5' or user_input == 'exit':
+            print("****************************************************************************")
+            print("*                                                                          *")
+            print("*                   Thank you for using College Bank ATM!                  *")
+            print("*                                                                          *")
+            print("****************************************************************************")
             quit()
     print("****************************************************************************")
     print("*                                                                          *")
@@ -198,6 +204,7 @@ def start_atm():
         elif int(entered_pin) == 0000:
             # Run admin program/function
             run_admin_program(accounts)
+        #invalid pin for user/try again
         elif int(entered_pin) != 0000 or int(entered_pin) != int(pin_ref):
             print("****************************************************************************")
             print("*                                                                          *")
@@ -225,6 +232,7 @@ def start_atm():
                     elif int(entered_pin) == 0000:
                         # Run admin program/function
                         run_admin_program(accounts)
+            #break loop
             else:
                 print("****************************************************************************")
                 print("*                                                                          *")
