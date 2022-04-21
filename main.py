@@ -165,6 +165,8 @@ def run_user_program(user):
                 print('\n\n\n\n\n')
                 # start_atm()
                 run_user_program(accounts)
+        if user_input == '5' or user_input == 'exit':
+            quit()
     print("****************************************************************************")
     print("*                                                                          *")
     print("*                   Thank you for using College Bank ATM!                  *")
