@@ -115,10 +115,12 @@ def run_admin_program(accounts):
                 print(f"{' Please select User':20s} {date:>25}")
                 print('-' * 50)
 
-            
+
             # FIXME I can't seem to directly pull one users info from the dictionary.
 
             if user_input == '3' or user_input == "Search Users":
+                # Display the names of the users and their info  in the accounts dictionary
+                # Used the template from account holders to create this, prints all users and their debit transactions
                 print(f"{' Users':20s} {date:>25}")
                 print('-' * 50)
                 account = input("Please enter user's name\n").strip()
@@ -129,30 +131,29 @@ def run_admin_program(accounts):
 
 
                     # Print Users first and last name
+                    # Fixme Error Message states that "line 135, in run_admin_program print(f"{accounts['first']:^10}{accounts['last']:<50}")KeyError: 'first'"
+                    
                     print(f"{accounts['first']:^10}{accounts['last']:<50}")
                     print()
 
                      # Print labels above transactions
                     print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
                     print('-' * 80)
-                    for transaction_ in account['debit_transactions']:
+                    for transaction_ in accounts['debit_transactions']:
                         # Print each debit transaction
                         print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
                                 f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
                     print()
 
 
-                # Display Divider
-                print('-' * 50)
+
+
                 # Display the names of the users and their info  in the accounts dictionary
                 # Used the template from account holders to create this, prints all users and their debit transactions
 
-                date = str(datetime.date.today())
-                print(f'{date:>80}')
 
-                for user in accounts:
-                    if 'Mutulu' in user.lower():
-                        print(f'  {user}')
+
+
 
             # Added the beginning of the "delete user" function
             if user_input == '4' or user_input == "Delete User":
