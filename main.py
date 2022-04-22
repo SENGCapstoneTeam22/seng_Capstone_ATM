@@ -11,6 +11,7 @@ def run_user_program(user):
     THIS FUNCTION IS THE USER PROGRAM.
     After the PIN is verified, this program will run.
     The User Object/Dictionary is passed into this function to be used for CRUD.
+    Updated
     """
     date = str(datetime.date.today())
     # Display user-name & date
