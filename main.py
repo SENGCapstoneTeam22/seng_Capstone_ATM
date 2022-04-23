@@ -108,7 +108,7 @@ def run_user_program(user):
             print(f'{"1 : Checking":20} {"2 : Saving":16s}')
             print(f'{"3 : Exit":16s}\n')
 
-            # Start of the withdrawal process. 
+            # Start of the withdrawal process UNFINISHED STILL WORKING ON IT.
             user_input = input('Enter your selection:\n')
             if user_input == '1' or user_input == 'Checking':
                 user_input = input('Enter a Withdraw Amount: $')
