@@ -335,32 +335,32 @@ REMEMBER TO RE-APPLY COMMENT NOTATION BEFORE RUNNING PROGRAM FOR PRODUCTION.
         
         
               
-def innum(mess):                                          
-     while True:                                          
-         try:                                             
-             num = float(input(mess))                     
-         except ValueError:                               
-             print('ERROR: Enter a number\n')             
-             continue                                     
-         else:                                            
-             if num < 0:                                  
-                 print('Negative Balance prohibited!\n')  
-                 continue                                 
+#def innum(mess):                                          
+#     while True:                                          
+#         try:                                             
+#             num = float(input(mess))                     
+#         except ValueError:                               
+#             print('ERROR: Enter a number\n')             
+#             continue                                     
+#         else:                                            
+#             if num < 0:                                  
+#                 print('Negative Balance prohibited!\n')  
+#                 continue                                 
                                                           
-             else:                                        
-                 return num                               
-                 break                                    
+#             else:                                        
+#                 return num                               
+#                 break                                    
                                                           
-while True:                                               
-     bal = random.randint(10, 10000)                      
+#while True:                                               
+ #    bal = random.randint(10, 10000)                      
                                                           
-while True:                                               
-     draw = innum('Enter a Withdraw Amount: $')           
-     if draw > bal:                                       
-         print('Error: Insufficient Funds!\n')            
-         continue                                         
-     else:                                                
-         for transaction_ in user['debit_transactions']:  
-             print(f"{transaction_['deb_credit']}'") - bal
-         print('Success!')                                        
+#while True:                                               
+#     draw = innum('Enter a Withdraw Amount: $')           
+#     if draw > bal:                                       
+#         print('Error: Insufficient Funds!\n')            
+#         continue                                         
+#     else:                                                
+#         for transaction_ in user['debit_transactions']:  
+#             print(f"{transaction_['deb_credit']}'") - bal
+#         print('Success!')                                        
         
