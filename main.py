@@ -21,7 +21,7 @@ def run_user_program(user):
 
     # User Commands
     print(f'{"0 : Accounts":20} {"1 : Deposit":16s}')
-    print(f'{"2 : Transfer":20s} {"4 : Products":16s}')
+    print(f'{"2 : Withdraw":20s} {"4 : Products":16s}') # Changed "Transfer" to "Withdraw"
     print(f'{"5 : Exit":20s}\n')
 
     # Ask User for a Command
@@ -100,19 +100,18 @@ def run_user_program(user):
                 # Restart/re-run the program to get back to Main Menu
                 run_user_program(accounts)
 
-        if user_input == '2' or user_input == 'transfer':
-            # Display user-name & date
-            print(f"{user['last']:8s}, {user['first']:14s} {date:8s}")
-            # Display Divider
-            print('-' * 35)
+        if user_input == '2' or user_input == 'Withdraw': # Replaced "Transfer" with "Withdraw"
+            # Removed print functions that was implemented before.
+            print(f"Which account would you like to withdraw funds from?\n")
 
-            # User Commands
-            print(f'{"0 : Checking":20} {"1 : Deposit":16s}')
-            print(f'{"2 : Saving":20s} {"3 : Credit":16s}')
-            print(f'{"4 : Profile":20s} {"5 : Exit":16s}\n')
+            # User Commands | Removed Deposit, Credit and Profile selections.
+            print(f'{"1 : Checking":20} {"2 : Saving":16s}')
+            print(f'{"3 : Exit":16s}\n')
 
-            # Ask User for Next Command
+            # Start of the withdrawal process. 
             user_input = input('Enter your selection:\n')
+            if user_input == '1' or user_input == 'Checking':
+                user_input = input('Enter a Withdraw Amount: $')
 
             # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
