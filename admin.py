@@ -78,35 +78,42 @@ def run_admin_program(accounts):
 
 
             # Added the beginning of the "add user" function
-            # FIXME Error message reads "dictionary changed size during iteration"
+            # FIXME I attempted to used precoded values to try and test the functionality. Error message reads "ValueError: dictionary update sequence element #0 has length 1; 2 is required"
             if user_input == '1' or user_input == "Add User":
                 print(f"{' Please enter user info':20s} {date:>25}")
                 print('-' * 50)
-                for user in accounts:
-                    name = str(input())
+                for member in accounts:
+                    name = "Billy Bob" #str(input())
                     accounts[name] = {}
-                    pin = int(input())
-                    accounts[name]['pin'] = pin
-                    first = str(input())
+                    pin = 4444 #int(input())
+                    accounts[name]['pin'] =  pin
+                    first = "Billy" #str(input())
                     accounts[name]['first'] = first
-                    last = str(input())
+                    last = "Bob" #str(input())
                     accounts[name]['last'] = last
-                    dob = str(input())
+                    dob = "00/00/00" #str(input())
                     accounts[name]['dob'] = dob
-                    debit = int(input())
+                    debit = "1234" #int(input())
                     accounts[name]['debit'] = debit
-                    saving = int(input())
+                    saving = "1234" #int(input())
                     accounts[name]['saving'] = saving
-                    credit = int(input())
+                    credit = "1234" #int(input())
                     accounts[name]['credit'] = credit
-                    credit_used = int(input())
+                    credit_used = "4321" #int(input())
                     accounts[name]['credit_used'] = credit_used
-                    address = str(input())
+                    address = "123 Rainbow Road" #str(input())
                     accounts[name]['address'] = address
-                    state = str(input())
+                    state = "Alabama" #str(input())
                     accounts[name]['state'] = state
-                    debit_transaction = []
+                    debit_transactions = []
+                    accounts[name]["debit_transaction"] = debit_transactions
                     savings_transactions = []
+                    accounts[name]["savings_transactions"] = savings_transactions
+                    accounts.update(member)
+
+
+
+
 
 
                     # Added the beginning of the "updated user" function
@@ -116,34 +123,54 @@ def run_admin_program(accounts):
                 print('-' * 50)
 
 
-            # FIXME I can't seem to directly pull one users info from the dictionary.
+            # FIXME I can successfully pull one debit_transaction dictionary, but it only pulls Mutulu's regardless of input. Any input will produce this effect, not just the names in the dictionary.
 
             if user_input == '3' or user_input == "Search Users":
                 # Display the names of the users and their info  in the accounts dictionary
                 # Used the template from account holders to create this, prints all users and their debit transactions
-                print(f"{' Users':20s} {date:>25}")
+                print(f"{'User view menu':20s} {date:>25}")
                 print('-' * 50)
-                account = input("Please enter user's name\n").strip()
-                if account in accounts:
-                    print(f'  {account}')
+
+                for account in accounts.values():
+                    user = input('Please enter Account name\n')
                     print()
+                    #     # Print Users first and last name
+                    if user == account:
+                        print(user)
+                        print(f"{user['first']:^10}{user['last']:<50}")
+                        print()
+
+
+
+                    # Print labels above transactions
+                    print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
+                    print('-' * 80)
+                    for transaction_ in account['debit_transactions']:
+                            # Print each debit transaction
+                        print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
+                                f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
                     print()
+
+                    # Display Divider
+                print('-' * 50)
+                    # Display the names of the users and their info  in the accounts dictionary
+                    # Used the template from account holders to create this, prints all users and their debit transactions
+
+                date = str(datetime.date.today())
+                print(f'{date:>80}')
+
+
+
+
 
 
                     # Print Users first and last name
                     # Fixme Error Message states that "line 135, in run_admin_program print(f"{accounts['first']:^10}{accounts['last']:<50}")KeyError: 'first'"
-                    
-                    print(f"{accounts['first']:^10}{accounts['last']:<50}")
-                    print()
+
+
 
                      # Print labels above transactions
-                    print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
-                    print('-' * 80)
-                    for transaction_ in accounts['debit_transactions']:
-                        # Print each debit transaction
-                        print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
-                                f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
-                    print()
+
 
 
 

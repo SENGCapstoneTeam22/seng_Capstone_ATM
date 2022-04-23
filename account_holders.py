@@ -15,7 +15,7 @@ accounts = {
         'state': '1884 ECU Blvd.',
         'debit_transactions': [
             # date, deb_cred, expense, amt, remaining,
-            {'date': '04/12/2022', 'deb_cred': 'debit', 'expense': 'random expense', 'amt': -311.21,
+            {'date': '04/12/2022', 'deb_cred': 'debit', 'expense': 'random expense', 'amt': -312.21,
              'remaining': 1926.62},
             {'date': '04/10/2022', 'deb_cred': 'credit', 'expense': 'random expense', 'amt': 1450.00,
              'remaining': 2237.69},
@@ -274,25 +274,25 @@ REMEMBER TO RE-APPLY COMMENT NOTATION BEFORE RUNNING PROGRAM FOR PRODUCTION.
 
 # CODE BELOW GRABS INDIVIDUAL USER DATA, W/ OPTION TO SEARCH FOR ADMIN
 # Iterate through accounts, print User-name if in accounts
-for user in accounts:
-    if 'mutulu' in user.lower(): # TODO: 'mutulu' should be replaced with input().strip() for searching the dictionary
-        print(f'  {user}')
+#for user in accounts:
+    #if 'mutulu' in user.lower(): # TODO: 'mutulu' should be replaced with input().strip() for searching the dictionary
+        #print(f'  {user}')
 
 # Iterate through accounts.values() to access inner dictionaries.
-for member in accounts.values():
-    # Create variables to hold query references.
-    pin = member['pin']
-    first = member['first']
-    last = member['last']
-    dob = member['dob']
-    debit = member['debit']
-    savings = member['saving']
-    credit = member['credit']
-    credit_used = member['credit_used']
-    address = member['address']
-    state = member['state']
-    debit_transactions = member['debit_transactions']
-    savings_transactions = member['savings_transactions']
+#for member in accounts.values():
+    ## Create variables to hold query references.
+    #pin = member['pin']
+    #first = member['first']
+    #last = member['last']
+    #dob = member['dob']
+    #debit = member['debit']
+    #savings = member['saving']
+    #credit = member['credit']
+    #credit_used = member['credit_used']
+    #address = member['address']
+    #state = member['state']
+    #debit_transactions = member['debit_transactions']
+    #savings_transactions = member['savings_transactions']
 
     # date = member['pin']
     # deb_cred = member['deb_cred'] # error
@@ -303,29 +303,29 @@ for member in accounts.values():
     # TODO: Grab last 'remaining' amt (debit/savings) and link to variables below
     # For ***USER-TEAM***, use variables below to show current money in the bank.
     # Reading the from the last transaction, the remaining amount.
-    current_debit = None
-    current_savings = None
+    #current_debit = None
+    #current_savings = None
 
-    # Check if the 'first-name' is equal to the users input
-    if first.lower() == 'mutulu':  # TODO: 'mutulu' should be replaced with input().strip() for searching the dictionary
+    ## Check if the 'first-name' is equal to the users input
+    #if first.lower() == 'mutulu':  # TODO: 'mutulu' should be replaced with input().strip() for searching the dictionary
 
-        # Print the all the information in the user dictionary of the user, using String Formatting.
-        print(f'\nPin : {pin}\nFirst : {first}\nDOB : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
-              f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n')
+        ## Print the all the information in the user dictionary of the user, using String Formatting.
+        #print(f'\nPin : {pin}\nFirst : {first}\nDOB : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
+              #f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n')
 
-        # Print 'Debit Transactions:' before printing/displaying all debit-transactions
-        print('   Debit Transactions:\n')
+        ## Print 'Debit Transactions:' before printing/displaying all debit-transactions
+        #print('   Debit Transactions:\n')
         # For every debit-transaction, print transaction
         # TODO: Use String Formatting as above, to display in a more neatly/professional looking manner.
         #  Reference variables are already listed above in comments.
-        for transaction in debit_transactions:
-            print(transaction)
-        # Blank line for separation
-        print()
+        #for transaction in debit_transactions:
+            #print(transaction)
+        ## Blank line for separation
+       # print()
 
-        # Print 'Savings Transactions:' before printing/displaying all savings-transactions
-        print('   Savings Transactions:\n')
-        for transaction in savings_transactions:
-            print(transaction)
-        # Blank line for separation
-        print()
+        ## Print 'Savings Transactions:' before printing/displaying all savings-transactions
+        #print('   Savings Transactions:\n')
+        #for transaction in savings_transactions:
+            #print(transaction)
+       ## Blank line for separation
+        #print()
