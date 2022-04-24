@@ -94,7 +94,7 @@ def run_user_program(user):
 
             # User Commands
             print(f'{"0 : Checking":20} {"1 : Saving":16s}')
-            print(f'{"2 : Exit":16s}\n')
+            print(f'{"2 : Profile":20} {"3 : Exit":16s}\n')
 
             # Ask User for Next Command
             user_input = input('Enter your selection:\n')
