@@ -94,7 +94,7 @@ def run_user_program(user):
 
             # User Commands
             print(f'{"0 : Checking":20} {"1 : Saving":16s}')
-            print(f'{"2 : Profile":20} {"3 : Exit":16s}\n')
+            print(f'{"2 : Back":20} {"3 : Exit":16s}\n')
 
             # Ask User for Next Command
             user_input = input('Enter your selection:\n')
@@ -121,11 +121,40 @@ def run_user_program(user):
                     print("*                                                                          *")
                     print("****************************************************************************")
                     quit()
+            if user_input == '1' or user_input == 'saving':
+                #deposit to saving INCOMPLETE
+                print(f'{"How much would you like to deposit?":10} {"Enter amount:":16s}')
+                deposit_amount1 = float(input())
+                deposit_answer1 = input(('Are you done? y/n\n'))
+                if deposit_answer1 == 'y':
+                    print("Current Balance:", deposit_amount1)
+                    quit()
+                if deposit_answer1 == 'n':
+                    #return to profile
+                    print('Returning to profile')
+                    run_user_program(user)
+                else:
+                    #Force exit due to invalid answer
+                    print("Invalid Answer... Forcing Exit...\n\n")
+                    print("****************************************************************************")
+                    print("*                                                                          *")
+                    print("*                   Thank you for using College Bank ATM!                  *")
+                    print("*                                                                          *")
+                    print("****************************************************************************")
+                    quit()
+            # restart/re-run the program.
+            if user_input == '2' or user_input == 'back':
+                run_user_program(user)
 
             # If the User chooses the 'EXIT' command, restart/re-run the program.
-            if user_input == '2' or user_input == 'exit':
-                # Restart/re-run the program to get back to Main Menu for current user
-                run_user_program(user)
+            if user_input == '3' or user_input == 'exit':
+                # Exit program
+                print("****************************************************************************")
+                print("*                                                                          *")
+                print("*                   Thank you for using College Bank ATM!                  *")
+                print("*                                                                          *")
+                print("****************************************************************************")
+                quit()
 
         if user_input == '2' or user_input == 'Withdraw': # Replaced "Transfer" with "Withdraw"
             # Removed print functions that was implemented before.
