@@ -174,7 +174,7 @@ def run_user_program(user):
                 withdraw_answer=input(('Are you done? y/n\n'))
                 if withdraw_answer == 'y':
                     #quit
-                    print("Current Balance:",withdraw_amount)
+                    print("Current Balance:", withdraw_amount)
                     quit()
                 if withdraw_answer == 'n':
                     #return to profile
@@ -197,7 +197,7 @@ def run_user_program(user):
                 withdraw_answer=input(('Are you done? y/n\n'))
                 if withdraw_answer == 'y':
                     #quit
-                    print("Current Balance:",withdraw_amount)
+                    print("Current Balance:", withdraw_amount)
                     quit()
                 if withdraw_answer == 'n':
                     #return to profile
