@@ -1,11 +1,12 @@
 import datetime
+import random
 from admin import run_admin_program
 from account_holders import accounts
 
 
 # help('FORMATTING')
 
-
+bal = random.randint(10, 10000)
 def run_user_program(user):
     """
     THIS FUNCTION IS THE USER PROGRAM.
@@ -174,11 +175,11 @@ def run_user_program(user):
                 withdraw_answer=input(('Are you done? y/n\n'))
                 if withdraw_answer == 'y':
                     #quit
-                    print("Current Balance:", withdraw_amount)
+                    print("Current Balance:", withdraw_amount + bal)
                     quit()
                 if withdraw_answer == 'n':
                     #return to profile
-                    print("Current Balnce:", withdraw_amount)
+                    print("Current Balnce:", withdraw_amount + bal)
                     print('Returning to profile')
                     run_user_program(user)
                 else:
@@ -197,11 +198,11 @@ def run_user_program(user):
                 withdraw_answer=input(('Are you done? y/n\n'))
                 if withdraw_answer == 'y':
                     #quit
-                    print("Current Balance:", withdraw_amount)
+                    print("Current Balance:", withdraw_amount + bal)
                     quit()
                 if withdraw_answer == 'n':
                     #return to profile
-                    print("Current Balnce:", withdraw_amount)
+                    print("Current Balnce:", withdraw_amount + bal)
                     print('Returning to profile')
                     run_user_program(user)
                 else:
