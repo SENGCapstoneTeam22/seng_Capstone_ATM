@@ -109,7 +109,7 @@ def run_user_program(user):
                     quit()
                 if deposit_answer == 'n':
                     #return to profile
-                    print("Current Balnce:", deposit_amount)
+                    print("Current Balance:", deposit_amount)
                     print('Returning to profile')
                     run_user_program(user)
                 else:
@@ -131,6 +131,7 @@ def run_user_program(user):
                     quit()
                 if deposit_answer1 == 'n':
                     #return to profile
+                    print("Current Balance:", deposit_amount1)
                     print('Returning to profile')
                     run_user_program(user)
                 else:
