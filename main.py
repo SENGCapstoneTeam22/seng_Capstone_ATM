@@ -74,12 +74,17 @@ def run_user_program(user):
                 # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '3' or user_input == 'profile':
                 # Restart/re-run the program to get back to Main Menu
-                run_user_program(accounts)
+                run_user_program(user)
 
             # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '4' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
-                run_user_program(accounts)
+                print("****************************************************************************")
+                print("*                                                                          *")
+                print("*                   Thank you for using College Bank ATM!                  *")
+                print("*                                                                          *")
+                print("****************************************************************************")
+                quit()
 
         if user_input == '1' or user_input == 'deposit':
             # Display user-name & date
@@ -88,17 +93,16 @@ def run_user_program(user):
             print('-' * 35)
 
             # User Commands
-            print(f'{"0 : Checking":20} {"1 : Deposit":16s}')
-            print(f'{"2 : Saving":20s} {"3 : Credit":16s}')
-            print(f'{"4 : Profile":20s} {"5 : Exit":16s}\n')
+            print(f'{"0 : Checking":20} {"1 : Saving":16s}')
+            print(f'{"2 : Exit":16s}\n')
 
             # Ask User for Next Command
             user_input = input('Enter your selection:\n')
 
             # If the User chooses the 'EXIT' command, restart/re-run the program.
-            if user_input == '5' or user_input == 'exit':
-                # Restart/re-run the program to get back to Main Menu
-                run_user_program(accounts)
+            if user_input == '2' or user_input == 'exit':
+                # Restart/re-run the program to get back to Main Menu for current user
+                run_user_program(user)
 
         if user_input == '2' or user_input == 'Withdraw': # Replaced "Transfer" with "Withdraw"
             # Removed print functions that was implemented before.
@@ -116,7 +120,7 @@ def run_user_program(user):
             # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
-                run_user_program(accounts)
+                run_user_program(user)
 
         if user_input == '3' or user_input == 'settings':
             # Display user-name & date
@@ -135,7 +139,7 @@ def run_user_program(user):
             # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
-                run_user_program(accounts)
+                run_user_program(user)
 
         if user_input == '4' or user_input == 'products':
             # Display Divider
@@ -164,7 +168,7 @@ def run_user_program(user):
                 # Restart/re-run the program to get back to Main Menu
                 print('\n\n\n\n\n')
                 # start_atm()
-                run_user_program(accounts)
+                run_user_program(user)
         #quit for user
         if user_input == '5' or user_input == 'exit':
             print("****************************************************************************")
