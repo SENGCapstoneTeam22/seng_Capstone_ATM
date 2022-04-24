@@ -167,9 +167,52 @@ def run_user_program(user):
 
             # Start of the withdrawal process UNFINISHED STILL WORKING ON IT.
             user_input = input('Enter your selection:\n')
-            if user_input == '1' or user_input == 'Checking':
-                user_input = input('Enter a Withdraw Amount: $')
-
+                       if user_input == '1' or user_input == 'Checking':
+                #withdraw from checking INCOMPLETE
+                print(f'{"How much would you like to withdraw?":10} {"Enter amount:":16s}')
+                withdraw_amount = float(input())
+                withdraw_answer=input(('Are you done? y/n\n'))
+                if withdraw_answer == 'y':
+                    #quit
+                    print("Current Balance:",withdraw_amount)
+                    quit()
+                if withdraw_answer == 'n':
+                    #return to profile
+                    print("Current Balnce:", withdraw_amount)
+                    print('Returning to profile')
+                    run_user_program(user)
+                else:
+                    #invalid answer quit
+                    print("Invalid Answer... Forcing Exit...\n\n")
+                    print("****************************************************************************")
+                    print("*                                                                          *")
+                    print("*                   Thank you for using College Bank ATM!                  *")
+                    print("*                                                                          *")
+                    print("****************************************************************************")
+                    quit()
+            if user_input == '2' or user_input == 'Saving':
+                #withdraw from saving INCOMPLETE
+                print(f'{"How much would you like to withdraw?":10} {"Enter amount:":16s}')
+                withdraw_amount = float(input())
+                withdraw_answer=input(('Are you done? y/n\n'))
+                if withdraw_answer == 'y':
+                    #quit
+                    print("Current Balance:",withdraw_amount)
+                    quit()
+                if withdraw_answer == 'n':
+                    #return to profile
+                    print("Current Balnce:", withdraw_amount)
+                    print('Returning to profile')
+                    run_user_program(user)
+                else:
+                    #invalid answer quit
+                    print("Invalid Answer... Forcing Exit...\n\n")
+                    print("****************************************************************************")
+                    print("*                                                                          *")
+                    print("*                   Thank you for using College Bank ATM!                  *")
+                    print("*                                                                          *")
+                    print("****************************************************************************")
+                    quit()
             # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
                 # Restart/re-run the program to get back to Main Menu
