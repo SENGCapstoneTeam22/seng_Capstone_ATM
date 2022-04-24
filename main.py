@@ -98,6 +98,29 @@ def run_user_program(user):
 
             # Ask User for Next Command
             user_input = input('Enter your selection:\n')
+            if user_input == '0' or user_input == 'checking':
+                #deposit to checking INCOMPLETE
+                print(f'{"How much would you like to deposit?":10} {"Enter amount:":16s}')
+                deposit_amount = float(input())
+                deposit_answer=input(('Are you done? y/n\n'))
+                if deposit_answer == 'y':
+                    #quit
+                    print("Current Balance:",deposit_amount)
+                    quit()
+                if deposit_answer == 'n':
+                    #return to profile
+                    print("Current Balnce:", deposit_amount)
+                    print('Returning to profile')
+                    run_user_program(user)
+                else:
+                    #invalid answer quit
+                    print("Invalid Answer... Forcing Exit...\n\n")
+                    print("****************************************************************************")
+                    print("*                                                                          *")
+                    print("*                   Thank you for using College Bank ATM!                  *")
+                    print("*                                                                          *")
+                    print("****************************************************************************")
+                    quit()
 
             # If the User chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '2' or user_input == 'exit':
