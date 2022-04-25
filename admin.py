@@ -12,9 +12,14 @@ def run_admin_program(accounts):
     # help('FORMATTING')
 
     date = str(datetime.date.today())
+    print('*******************************************************************')
+    print('*                                                                 *')
+    print('*                    Welcome Administrator                        *')
+    print('*                                                                 *')
+    print('*******************************************************************')
 
     # Welcome Message
-    print(f'{"Welcome Admin":^48}')
+    print(f'{"Please select your input":^45}')
 
     # Display user-name & date
     print(f"{' Admin':20s} {date:>25}")
@@ -167,8 +172,22 @@ def run_admin_program(accounts):
             if user_input == '4' or user_input == "Delete User":
                 print(f"{' Please enter Users name and the Admin code':20s} {date:>25}")
                 print('-' * 50)
-                for member in accounts:
-                    
+                for member in accounts.values():
+                    pin = member['pin']
+                    first = member['first']
+                    last = member['last']
+                    dob = member['dob']
+                    debit = member['debit']
+                    savings = member['saving']
+                    credit = member['credit']
+                    credit_used = member['credit_used']
+                    address = member['address']
+                    state = member['state']
+                    if input().strip() == member:
+                        del member
+
+
+
 
 
             # If the user chooses the 'EXIT' command, restart/re-run the program.
