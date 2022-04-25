@@ -17,7 +17,7 @@ accounts = {
         'state': '1884 ECU Blvd.',
         'debit_transactions': [
             # date, deb_cred, expense, amt, remaining,
-            {'date': '04/12/2022', 'deb_cred': 'debit', 'expense': 'random expense', 'amt': -312.21,
+            {'date': '04/12/2022', 'deb_cred': 'debit', 'expense': 'random expense', 'amt': -311.21,
              'remaining': 1926.62},
             {'date': '04/10/2022', 'deb_cred': 'credit', 'expense': 'random expense', 'amt': 1450.00,
              'remaining': 2237.69},

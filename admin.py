@@ -123,14 +123,13 @@ def run_admin_program(accounts):
                 print('-' * 50)
 
 
-            # FIXME I can successfully pull one debit_transaction dictionary, but it only pulls Mutulu's regardless of input. Any input will produce this effect, not just the names in the dictionary.
+            # FIXME Command will iterate through the accounts dictionary, but requires three inputs from user, The program is looking through all of the users in the accounts dictionary and outputs the print statement for each one.
 
             if user_input == '3' or user_input == "Search Users":
                 # Display the names of the users and their info  in the accounts dictionary
                 # Used the template from account holders to create this, prints all users and their debit transactions
                 print(f"{'User view menu':20s} {date:>25}")
                 print('-' * 50)
-
                 for account in accounts.values():
                     user = input('Please enter Account name\n')
                     print()
@@ -140,61 +139,23 @@ def run_admin_program(accounts):
                         print(f"{user['first']:^10}{user['last']:<50}")
                         print()
 
-
-
                     # Print labels above transactions
                     print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
                     print('-' * 80)
                     for transaction_ in account['debit_transactions']:
-                            # Print each debit transaction
+                        # Print each debit transaction
                         print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
-                                f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
+                              f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
                     print()
 
-                    # Display Divider
+                # Display Divider
                 print('-' * 50)
-                    # Display the names of the users and their info  in the accounts dictionary
-                    # Used the template from account holders to create this, prints all users and their debit transactions
-
                 date = str(datetime.date.today())
                 print(f'{date:>80}')
-
-
-
-
-
-
-                    # Print Users first and last name
-                    # Fixme Error Message states that "line 135, in run_admin_program print(f"{accounts['first']:^10}{accounts['last']:<50}")KeyError: 'first'"
-
-
-
-                     # Print labels above transactions
-
-
-
-
-
-                # Display the names of the users and their info  in the accounts dictionary
-                # Used the template from account holders to create this, prints all users and their debit transactions
-
-
-
-
-
             # Added the beginning of the "delete user" function
             if user_input == '4' or user_input == "Delete User":
                 print(f"{' Please enter Users name and the Admin code':20s} {date:>25}")
                 print('-' * 50)
-
-
-
-
-
-
-
-
-
 
 
             # If the user chooses the 'EXIT' command, restart/re-run the program.
