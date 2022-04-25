@@ -64,17 +64,26 @@ def run_admin_program(accounts):
 
                 date = str(datetime.date.today())
                 print(f'{date:>80}')
-                for account in accounts.values():
-                    print()
-                    #print(f"{account['first']:60} {account['last']:20}")
-                    print(f"{account['first']:^10}{account['last']:<50}")
-                    print()
-                    print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
-                    print('-' * 80)
-                    for transaction_ in account['debit_transactions']:
-                        print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
-                        f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
-                        print()
+                for member in accounts.values():
+                    pin = member['pin']
+                    first = member['first']
+                    last = member['last']
+                    dob = member['dob']
+                    debit = member['debit']
+                    savings = member['saving']
+                    credit = member['credit']
+                    credit_used = member['credit_used']
+                    address = member['address']
+                    state = member['state']
+
+
+                    print(f'\nPin : {pin}\nName : {first} {last}\nDob : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
+                    f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n')
+
+
+
+
+
 
 
             # Added the beginning of the "add user" function
@@ -128,25 +137,27 @@ def run_admin_program(accounts):
             if user_input == '3' or user_input == "Search Users":
                 # Display the names of the users and their info  in the accounts dictionary
                 # Used the template from account holders to create this, prints all users and their debit transactions
-                print(f"{'User view menu':20s} {date:>25}")
+                print(f"{'Search user menu':20s} {date:>25}")
                 print('-' * 50)
-                for account in accounts.values():
-                    user = input('Please enter Account name\n')
-                    print()
-                    #     # Print Users first and last name
-                    if user == account:
-                        print(user)
-                        print(f"{user['first']:^10}{user['last']:<50}")
-                        print()
 
-                    # Print labels above transactions
-                    print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
-                    print('-' * 80)
-                    for transaction_ in account['debit_transactions']:
-                        # Print each debit transaction
-                        print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
-                              f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
-                    print()
+
+
+                for member in accounts.values():
+                    pin = member['pin']
+                    first = member['first']
+                    last = member['last']
+                    dob = member['dob']
+                    debit = member['debit']
+                    savings = member['saving']
+                    credit = member['credit']
+                    credit_used = member['credit_used']
+                    address = member['address']
+                    state = member['state']
+                    if first.lower() == input().strip():  # TODO: 'mutulu' should be replaced with input().strip() for searching the dictionary
+
+                    ## Print the all the information in the user dictionary of the user, using String Formatting.
+                        print(f'\nPin : {pin}\nFirst : {first}\nDOB : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
+                    f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n')
 
                 # Display Divider
                 print('-' * 50)
@@ -156,6 +167,8 @@ def run_admin_program(accounts):
             if user_input == '4' or user_input == "Delete User":
                 print(f"{' Please enter Users name and the Admin code':20s} {date:>25}")
                 print('-' * 50)
+                for member in accounts:
+                    
 
 
             # If the user chooses the 'EXIT' command, restart/re-run the program.
