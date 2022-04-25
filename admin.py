@@ -173,14 +173,84 @@ def run_admin_program(accounts):
             # Admin Commands
             print(f'{"0 : View All":20} {"1 : View Last":16s}')
             print(f'{"2 : Average Balance":20s} {"3 : Maximum":16s}')
-            print(f'{"4 : Minimum":20s} {"5 : Flagged":16s}')
-            print(f'{"6 : Return to Main Menu":20s}\n')
+            print(f'{"4 : Minimum":20s} {"5 : Return to Main Menu":20s}\n')
 
             # Ask Admin for Next Command
             user_input = input('Enter your selection:\n')
-            print()
+            if user_input == '0' or user_input == 'View All':
+                print(f"\n\n{' Admin':20s} {date:>25}")
+                # Display user-name & date
+                print(f"{' Users':20s} {date:>25}")
+
+                # Display Divider
+                print('-' * 50)
+                # Display the names of the users and their info  in the accounts dictionary
+                # Used the template from account holders to create this, prints all users and their debit transactions
+
+                date = str(datetime.date.today())
+                print(f'{date:>80}')
+                for account in accounts.values():
+                    print()
+                    # print(f"{account['first']:60} {account['last']:20}")
+                    print(f"{account['first']:^10}{account['last']:<50}")
+                    print()
+                    print('User Savings Transactions')
+                    print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
+                    print('-' * 80)
+                    for transaction_ in account['savings_transactions']:
+                        print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
+                                  f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
+                        print()
+                for account in accounts.values():
+                    print()
+                        # print(f"{account['first']:60} {account['last']:20}")
+                    print(f"{account['first']:^10}{account['last']:<50}")
+                    print()
+                    print('User Debit Transactions')
+                    print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
+                    print('-' * 80)
+                    for transaction_ in account['debit_transactions']:
+                        print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
+                                  f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
+                        print()
 
 
+                # Display Divider
+                print('-' * 50)
+            if user_input == '1' or user_input == 'View Last':
+                print(f"\n\n{' Admin':20s} {date:>25}")
+
+                # Display Divider
+                print('-' * 50)
+            if user_input == '2' or user_input == 'Average Balance':
+                print(f"\n\n{' Admin':20s} {date:>25}")
+
+                # Display Divider
+                print('-' * 50)
+            if user_input == '3' or user_input == 'Maximum':
+                print(f"\n\n{' Admin':20s} {date:>25}")
+
+                # Display Divider
+                print('-' * 50)
+            if user_input == '4' or user_input == 'Minimum':
+                print(f"\n\n{' Admin':20s} {date:>25}")
+
+                # Display Divider
+                print('-' * 50)
+
+
+
+                for account in accounts.values():
+                    print()
+                    #print(f"{account['first']:60} {account['last']:20}")
+                    print(f"{account['first']:^10}{account['last']:<50}")
+                    print()
+                    print(f"{'Date':^10} {'Debit/Credit':^16} {'Expense':^21} {'Amount':^20} {'Balance':^8}")
+                    print('-' * 80)
+                    for transaction_ in account['debit_transactions']:
+                        print(f"{transaction_['date']:15} {transaction_['deb_cred']:15} {transaction_['expense']:15} "
+                        f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
+                        print()
             # If the user chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '6' or user_input == 'exit':
                     # Restart/re-run the program to get back to Main Menu
