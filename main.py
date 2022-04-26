@@ -106,11 +106,11 @@ def run_user_program(user):
                 deposit_answer=input(('Are you done? y/n\n'))
                 if deposit_answer == 'y':
                     #quit
-                    print("Current Balance:",deposit_amount)
+                    print("Current Balance:",deposit_amount + bal)
                     quit()
                 if deposit_answer == 'n':
                     #return to profile
-                    print("Current Balance:", deposit_amount)
+                    print("Current Balance:", deposit_amount + bal)
                     print('Returning to profile')
                     run_user_program(user)
                 else:
@@ -128,11 +128,11 @@ def run_user_program(user):
                 deposit_amount1 = float(input())
                 deposit_answer1 = input(('Are you done? y/n\n'))
                 if deposit_answer1 == 'y':
-                    print("Current Balance:", deposit_amount1)
+                    print("Current Balance:", deposit_amount1 + bal)
                     quit()
                 if deposit_answer1 == 'n':
                     #return to profile
-                    print("Current Balance:", deposit_amount1)
+                    print("Current Balance:", deposit_amount1 + bal)
                     print('Returning to profile')
                     run_user_program(user)
                 else:
