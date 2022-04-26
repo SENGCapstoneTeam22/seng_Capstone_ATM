@@ -49,11 +49,6 @@ def run_admin_program(accounts):
             print(f'{"4 : Delete User":20s} {"5 : Exit":16s}\n')
             # Display User Accounts
 
-
-
-
-
-
             # Ask Admin for Next Command
             user_input = input('Enter your selection:\n')
             # Display users and total number of users
@@ -81,17 +76,11 @@ def run_admin_program(accounts):
                     address = member['address']
                     state = member['state']
 
-
+                    # Print user info from account_holders
                     print(f'\nPin : {pin}\nName : {first} {last}\nDob : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
                     f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n')
                     # Restart admin program
                     run_admin_program(accounts)
-
-
-
-
-
-
 
             # Added the beginning of the "add user" function
             # FIXME I attempted to used precoded values to try and test the functionality. Error message reads "ValueError: dictionary update sequence element #0 has length 1; 2 is required"
@@ -129,12 +118,7 @@ def run_admin_program(accounts):
                     # Restart admin program
                     run_admin_program(accounts)
 
-
-
-
-
-
-                    # Added the beginning of the "updated user" function
+            # Added the beginning of the "updated user" function
             # FIXME Same as before, inputting 2 triggers the system information menu as well as the print statement
             if user_input == '2' or user_input == "Updated Users":
                 print(f"{' Please select User':20s} {date:>25}")
@@ -144,13 +128,13 @@ def run_admin_program(accounts):
 
 
             # FIXME Command will iterate through the accounts dictionary, but requires three inputs from user, The program is looking through all of the users in the accounts dictionary and outputs the print statement for each one.
-
             if user_input == '3' or user_input == "Search Users":
                 # Display the names of the users and their info  in the accounts dictionary
                 # Used the template from account holders to create this, prints specified user information.
                 print(f"{'Search user menu':20s} {date:>25}")
                 print(f"{'Please type users first name':20s}")
                 print('-' * 50)
+                # Iterate through the accounts dictionary
                 for member in accounts.values():
                     pin = member['pin']
                     first = member['first']
@@ -163,6 +147,7 @@ def run_admin_program(accounts):
                     address = member['address']
                     state = member['state']
                     user = input().strip()
+                    # Check input to see if it matches the "first" key in account.holders
                     if first == user:
                         # Print the all the information in the user dictionary of the user, using String Formatting.
                         print(
@@ -194,10 +179,6 @@ def run_admin_program(accounts):
                         del member
                         # Restart admin program
                         run_admin_program(accounts)
-
-
-
-
 
             # If the user chooses the 'EXIT' command, restart/re-run the program.
             if user_input == '5' or user_input == 'exit':
