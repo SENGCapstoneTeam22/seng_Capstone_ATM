@@ -84,6 +84,8 @@ def run_admin_program(accounts):
 
                     print(f'\nPin : {pin}\nName : {first} {last}\nDob : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
                     f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n')
+                    # Restart admin program
+                    run_admin_program(accounts)
 
 
 
@@ -124,6 +126,8 @@ def run_admin_program(accounts):
                     savings_transactions = []
                     accounts[name]["savings_transactions"] = savings_transactions
                     accounts.update(member)
+                    # Restart admin program
+                    run_admin_program(accounts)
 
 
 
@@ -135,18 +139,18 @@ def run_admin_program(accounts):
             if user_input == '2' or user_input == "Updated Users":
                 print(f"{' Please select User':20s} {date:>25}")
                 print('-' * 50)
+                # Restart admin program
+                run_admin_program(accounts)
 
 
             # FIXME Command will iterate through the accounts dictionary, but requires three inputs from user, The program is looking through all of the users in the accounts dictionary and outputs the print statement for each one.
 
             if user_input == '3' or user_input == "Search Users":
                 # Display the names of the users and their info  in the accounts dictionary
-                # Used the template from account holders to create this, prints all users and their debit transactions
+                # Used the template from account holders to create this, prints specified user information.
                 print(f"{'Search user menu':20s} {date:>25}")
+                print(f"{'Please type users first name':20s}")
                 print('-' * 50)
-
-
-
                 for member in accounts.values():
                     pin = member['pin']
                     first = member['first']
@@ -158,11 +162,14 @@ def run_admin_program(accounts):
                     credit_used = member['credit_used']
                     address = member['address']
                     state = member['state']
-                    if first.lower() == input().strip():  # TODO: 'mutulu' should be replaced with input().strip() for searching the dictionary
-
-                    ## Print the all the information in the user dictionary of the user, using String Formatting.
-                        print(f'\nPin : {pin}\nFirst : {first}\nDOB : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
-                    f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n')
+                    user = input().strip()
+                    if first == user:
+                        # Print the all the information in the user dictionary of the user, using String Formatting.
+                        print(
+                            f'\nPin : {pin}\nName : {first} {last}\nDob : {dob}\nDebit : {debit}\nSavings : {savings}\nCredit : {credit}\n'
+                            f'Credit Used : {credit_used}\nAddress : {address}\nState : {state}\n')
+                        # Restart admin program
+                        run_admin_program(accounts)
 
                 # Display Divider
                 print('-' * 50)
@@ -185,6 +192,8 @@ def run_admin_program(accounts):
                     state = member['state']
                     if input().strip() == member:
                         del member
+                        # Restart admin program
+                        run_admin_program(accounts)
 
 
 
