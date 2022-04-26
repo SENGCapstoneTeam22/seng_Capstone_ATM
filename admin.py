@@ -236,27 +236,30 @@ def run_admin_program(accounts):
                                   f"{transaction_['amt']:15}" f"{transaction_['remaining']:15}")
                         print()
 
-
+                        run_admin_program(accounts)
                 # Display Divider
                 print('-' * 50)
             if user_input == '1' or user_input == 'View Last':
                 print(f"\n\n{' Admin':20s} {date:>25}")
-
+                run_admin_program(accounts)
                 # Display Divider
                 print('-' * 50)
+
             if user_input == '2' or user_input == 'Average Balance':
                 print(f"\n\n{' Admin':20s} {date:>25}")
-
+                run_admin_program(accounts)
                 # Display Divider
                 print('-' * 50)
+
             if user_input == '3' or user_input == 'Maximum':
                 print(f"\n\n{' Admin':20s} {date:>25}")
-
+                run_admin_program(accounts)
                 # Display Divider
                 print('-' * 50)
+
             if user_input == '4' or user_input == 'Minimum':
                 print(f"\n\n{' Admin':20s} {date:>25}")
-
+                run_admin_program(accounts)
                 # Display Divider
                 print('-' * 50)
 
