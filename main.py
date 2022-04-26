@@ -340,16 +340,16 @@ def start_atm():
                 print("*                   Thank you for using College Bank ATM!                  *")
                 print("*                                                                          *")
                 print("****************************************************************************")
-                break
+                quit()
             else:
                 #break loop for invalid answer
-                print("Invalid Answer... Forcing Exit...\n\n")
+                print("Invalid Answer too many times... Forcing Exit...\n\n")
                 print("****************************************************************************")
                 print("*                                                                          *")
                 print("*                   Thank you for using College Bank ATM!                  *")
                 print("*                                                                          *")
                 print("****************************************************************************")
-                break
+                quit()
 
             # TODO: COME UP W/ A WAY TO CLOSE PROGRAM ON COMMAND (EXIT FUNCTION)
 
